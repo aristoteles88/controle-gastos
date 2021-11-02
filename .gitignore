@@ -1,0 +1,3 @@
+/venv/
+/contas/migrations/
+db.sqlite3
