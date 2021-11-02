@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from models import Transacao
 import datetime
 
 
 def home(request):
-    now = datetime.datetime.now()
+    data = {}
+
+    data['now'] = datetime.datetime.now()
+    data['transacoes'] = ['t1', 't2', 't3']
     # html = "<html><body>Agora são %s.</body></html>" % now
-    return render(request=request, template_name="contas/home.html")
+    return render(request=request, template_name="contas/home.html", context=data)
