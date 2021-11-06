@@ -8,8 +8,11 @@
     <h2>Listagem</h2>
     <ul>
         {% for transacao in transacoes %}
-            <li>{{ transacao }} - {{ transacao.data }} - {{ transacao.valor }} - {{ transacao.categoria }}</li>
+            <li><a href="{% url 'url_update' transacao.id %}"> {{ transacao }} </a>- {{ transacao.data }} - {{ transacao.valor }} - {{ transacao.categoria }}</li>
         {% endfor %}
     </ul>
+
+    <a href="{% url 'url_nova' %}">Nova Transação</a>
+<!--    <button type="submit">Nova Transacao</button>-->
 </body>
 </html>
